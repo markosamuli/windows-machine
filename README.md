@@ -41,29 +41,28 @@ Install [cChoco module](https://www.powershellgallery.com/packages/cChoco/2.3.1.
 Install-Module -Name cChoco -MinimumVersion 2.4.0.0
 ```
 
-## Updating configuration
+## Developer Machine setup
 
 Start PowerShell with **Run as administrator** option and run the following command:
 
 ```PowerShell
-.\SetupMachine.ps1
+.\DeveloperMachine.ps1
 ```
 
-## Provides
+### Installed software
 
 Configures following PowerShell package management sources:
 
 * [NuGet](https://www.nuget.org)
 * [PowerShell Gallery](https://www.powershellgallery.com)
 
-Enables following Windows features:
-
-* [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/)
-* [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/about)
-
 Installs following PowerShell modules:
 
 * [posh-git](https://github.com/dahlbyk/posh-git)
+
+Enable following features:
+
+* [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/about) 
 
 Install or upgrade the following software:
 
@@ -81,12 +80,30 @@ Install or upgrade the following software:
 * Nodejs LTS 10.14.1
 * Microsoft Visual C++ 2010 SP1 Redistributable Package
 * GNU Privacy Guard for Windows
-* OpenVPN
-* VLC media player
 * 7zip
-* Spotify
 * Visual Studio Code
-* Docker Desktop (requires Hyper-V)
+* OpenVPN client
+* Spotify
+* VLC media player
+
+## Docker Desktop setup
+
+Start PowerShell with **Run as administrator** option and run the following command:
+
+```PowerShell
+.\DockerMachine.ps1
+```
+
+### Installed software
+
+* Enable [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/) feature
+* Install Docker Desktop 
+
+## PowerShell 5.1 Reference
+
+* [PackageManagement](https://docs.microsoft.com/en-us/powershell/module/packagemanagement/?view=powershell-5.1)
+* [PSDesiredStateConfiguration](https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/?view=powershell-5.1)
+* [Built-In Windows PowerShell Desired State Configuration Resources](https://docs.microsoft.com/en-us/powershell/dsc/builtinresource)
 
 ## Troubleshooting
 
@@ -132,6 +149,27 @@ Set-Item -Path WSMan:\localhost\MaxEnvelopeSizeKb -Value 2048
 ```
 
 [1]: https://github.com/powershell/sharepointdsc/wiki/Error-Exceeded-the-configured-MaxEnvelopeSize-quota
+
+### Script execution fails
+
+Loading `SetupMachine.ps1` script fails:
+
+```text
+.\SetupMachine.ps1 : File C:\Users\babydragon\Documents\windows-machine\SetupMachine.ps1 cannot be loaded because
+running scripts is disabled on this system. For more information, see about_Execution_Policies at
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:1
++ .\SetupMachine.ps1
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+```
+
+Change machine level PowerShell [ExecutionPolicy][2] to RemoteSigned in the CurrentUser scope:
+
+```PowerShell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+```
 
 ### Execution Policy error when running DSC modules
 
