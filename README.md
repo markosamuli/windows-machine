@@ -1,5 +1,11 @@
 # Windows Machine setup
 
+## Windows
+
+Make sure you're running Windows 10, version 1809 or newer.
+
+Docker requires Hyper-V so you need Windows Pro license.
+
 ## Configure WinRM
 
 Start WinRM service:
@@ -22,6 +28,13 @@ Install NuGet provider:
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 ```
 
+Install PowerShellGet and PackageManagement modules:
+
+```PowerShell
+Install-Module –Name PowerShellGet -Force -MinimumVersion 2.0.3
+Install-Module –Name PackageManagement -Force -MinimumVersion 1.2.4
+```
+
 Install [cChoco module](https://www.powershellgallery.com/packages/cChoco/2.3.1.0):
 
 ```PowerShell
@@ -35,6 +48,45 @@ Start PowerShell with **Run as administrator** option and run the following comm
 ```PowerShell
 .\SetupMachine.ps1
 ```
+
+## Provides
+
+Configures following PowerShell package management sources:
+
+* [NuGet](https://www.nuget.org)
+* [PowerShell Gallery](https://www.powershellgallery.com)
+
+Enables following Windows features:
+
+* [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/)
+* [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/about)
+
+Installs following PowerShell modules:
+
+* [posh-git](https://github.com/dahlbyk/posh-git)
+
+Install or upgrade the following software:
+
+* Chocolatey 
+* Chocolatey Core Extensions
+* Chocolatey GUI
+* Google Chrome 
+* Firefox
+* Cmder terminal application
+* Postman for Windows
+* Terraform
+* Python 3.7.1
+* Erlang
+* Elixir 1.7.1
+* Nodejs LTS 10.14.1
+* Microsoft Visual C++ 2010 SP1 Redistributable Package
+* GNU Privacy Guard for Windows
+* OpenVPN
+* VLC media player
+* 7zip
+* Spotify
+* Visual Studio Code
+* Docker Desktop (requires Hyper-V)
 
 ## Troubleshooting
 
