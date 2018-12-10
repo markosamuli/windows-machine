@@ -234,6 +234,15 @@ Configuration DeveloperMachine
             Version              = 2.4.6.20180710
             DependsOn            = '[cChocoInstaller]Install'
         }
+        cChocoPackageInstaller installBINDTools
+        {
+            Name                 = 'bind-toolsonly'
+            Ensure               = 'Present'
+            AutoUpgrade          = $AutoUpgrade
+            Version              = 9.12.1
+            DependsOn            = '[cChocoInstaller]Install'
+        }
+        
    }
 }
 
