@@ -179,7 +179,7 @@ Configuration DeveloperMachine
             Name                 = 'python3'
             Ensure               = 'Present'
             AutoUpgrade          = $False
-            Version              = 3.7.1
+            Version              = 3.7.2
             DependsOn            = '[cChocoInstaller]Install'
         } 
         cChocoPackageInstaller installNodejs
