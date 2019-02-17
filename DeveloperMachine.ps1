@@ -233,7 +233,7 @@ Configuration DeveloperMachine
             Name                 = 'openvpn'
             Ensure               = 'Present'
             AutoUpgrade          = $False
-            Version              = 2.4.6.20180710
+            Version              = 2.4.6.20190116
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installBINDTools
