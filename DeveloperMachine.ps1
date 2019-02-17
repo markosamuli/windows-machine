@@ -163,7 +163,7 @@ Configuration DeveloperMachine
             Name                 = 'vscode'
             Ensure               = 'Present'
             AutoUpgrade          = $False
-            Version              = 1.29.1
+            Version              = 1.31.1
             DependsOn            = '[cChocoInstaller]Install'
         } 
         cChocoPackageInstaller installTerraform
