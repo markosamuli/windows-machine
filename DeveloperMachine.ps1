@@ -195,7 +195,7 @@ Configuration DeveloperMachine
             Name                 = 'erlang'
             Ensure               = 'Present'
             AutoUpgrade          = $False
-            Version              = 21.0.1.20180701
+            Version              = 21.2
             DependsOn            = '[cChocoInstaller]Install'
         } 
         cChocoPackageInstaller installElixir
