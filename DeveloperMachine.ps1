@@ -133,7 +133,7 @@ Configuration DeveloperMachine
             Name                 = '7zip'
             Ensure               = 'Present'
             AutoUpgrade          = $True
-            Version              = 18.5.0.20180730
+            Version              = 18.6
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installCmder
