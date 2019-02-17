@@ -272,6 +272,14 @@ Configuration DeveloperMachine
             Version              = 2.12.2
             DependsOn            = '[cChocoInstaller]Install'
         }
+        cChocoPackageInstaller installJq
+        {
+            Name                 = 'jq'
+            Ensure               = 'Present'
+            AutoUpgrade          = $AutoUpgrade
+            Version              = 1.5
+            DependsOn            = '[cChocoInstaller]Install'
+        }
         
    }
 }
