@@ -141,7 +141,7 @@ Configuration DeveloperMachine
             Name                 = 'Cmder'
             Ensure               = 'Present'
             AutoUpgrade          = $True
-            Version              = 1.3.5
+            Version              = 1.3.11
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installPoshGit
