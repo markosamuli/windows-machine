@@ -325,6 +325,14 @@ Configuration DeveloperMachine
             Version              = 4.10.0
             DependsOn            = '[cChocoInstaller]Install'
         }
+        cChocoPackageInstaller installWget
+        {
+            Name                 = 'wget'
+            Ensure               = 'Present'
+            AutoUpgrade          = $False
+            Version              = 1.20
+            DependsOn            = '[cChocoInstaller]Install'
+        }
         
    }
 }
