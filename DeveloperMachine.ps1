@@ -117,7 +117,7 @@ Configuration DeveloperMachine
             Name                 = 'vlc'
             Ensure               = 'Present'
             AutoUpgrade          = $False
-            Version              = 3.0.4
+            Version              = 3.0.6
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installSpotify
