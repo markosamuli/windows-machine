@@ -241,7 +241,7 @@ Configuration DeveloperMachine
             Name                 = 'bind-toolsonly'
             Ensure               = 'Present'
             AutoUpgrade          = $False
-            Version              = 9.12.1
+            Version              = 9.12.3
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installGolang
