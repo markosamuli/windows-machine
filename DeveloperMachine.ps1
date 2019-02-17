@@ -155,7 +155,7 @@ Configuration DeveloperMachine
             Name                 = 'postman'
             Ensure               = 'Present'
             AutoUpgrade          = $False
-            Version              = 6.5.3
+            Version              = 6.7.2
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installVSCode
