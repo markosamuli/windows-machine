@@ -109,7 +109,7 @@ Configuration DeveloperMachine
             Name                 = 'firefox'
             Ensure               = 'Present'
             AutoUpgrade          = $False
-            Version              = 63.0.3
+            Version              = 65.0.1
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installVLC
