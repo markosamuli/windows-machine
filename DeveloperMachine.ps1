@@ -10,10 +10,6 @@ Automatically upgrade packages installed with Chocolatey to their latest version
 #>
 Configuration DeveloperMachine
 {
-    Param (
-        [switch]$AutoUpgrade
-    )
-
     Import-DscResource -ModuleName cChoco -ModuleVersion 2.4.0.0
     Import-DscResource -ModuleName PackageManagement -ModuleVersion 1.2.4
     Import-DscResource -ModuleName PSDesiredStateConfiguration
@@ -72,7 +68,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'chocolatey'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $True
             Version              = 0.10.11
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -80,7 +76,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'chocolatey-core.extension'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $True
             Version              = 1.3.3
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -88,7 +84,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'ChocolateyGUI'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $True
             Version              = 0.16.0
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -96,7 +92,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'meld'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $True
             Version              = 3.16.2
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -104,7 +100,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'googlechrome'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $False
             Version              = 71.10.3578.80
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -112,7 +108,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'firefox'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $False
             Version              = 63.0.3
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -120,7 +116,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'vlc'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $False
             Version              = 3.0.4
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -128,7 +124,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'spotify'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $False
             Version              = 1.0.80.474
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -136,7 +132,7 @@ Configuration DeveloperMachine
         {
             Name                 = '7zip'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $True
             Version              = 18.5.0.20180730
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -144,11 +140,11 @@ Configuration DeveloperMachine
         {
             Name                 = 'Cmder'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $True
             Version              = 1.3.5
             DependsOn            = '[cChocoInstaller]Install'
         }
-        cChocoPackageInstaller installPostGit
+        cChocoPackageInstaller installPoshGit
         {
             Name                 = 'poshgit'
             Ensure               = 'Absent'
@@ -158,7 +154,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'postman'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $True
             Version              = 6.5.3
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -166,7 +162,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'vscode'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $False
             Version              = 1.29.1
             DependsOn            = '[cChocoInstaller]Install'
         } 
@@ -174,7 +170,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'terraform'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $False
             Version              = 0.11.9
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -182,7 +178,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'python3'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $False
             Version              = 3.7.1
             DependsOn            = '[cChocoInstaller]Install'
         } 
@@ -190,7 +186,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'nodejs-lts'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $False
             Version              = 10.14.1
             DependsOn            = '[cChocoInstaller]Install'
         } 
@@ -198,7 +194,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'erlang'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $False
             Version              = 21.0.1.20180701
             DependsOn            = '[cChocoInstaller]Install'
         } 
@@ -206,7 +202,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'Elixir'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $False
             Version              = 1.7.1
             DependsOn            = '[cChocoInstaller]Install'
         } 
@@ -214,7 +210,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'vcredist2010'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $False
             Version              = 10.0.40219.2
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -228,7 +224,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'gpg4win'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $True
             Version              = 3.1.5
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -236,7 +232,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'openvpn'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $True
             Version              = 2.4.6.20180710
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -244,7 +240,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'bind-toolsonly'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $True
             Version              = 9.12.1
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -252,7 +248,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'golang'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $True
             Version              = 1.11.4
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -260,7 +256,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'kubernetes-cli'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $True
             Version              = 1.13.3
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -268,7 +264,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'kubernetes-helm'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $True
             Version              = 2.12.2
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -276,7 +272,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'jq'
             Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
+            AutoUpgrade          = $True
             Version              = 1.5
             DependsOn            = '[cChocoInstaller]Install'
         }
