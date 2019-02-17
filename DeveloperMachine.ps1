@@ -333,6 +333,31 @@ Configuration DeveloperMachine
             Version              = 1.20
             DependsOn            = '[cChocoInstaller]Install'
         }
+        cChocoPackageInstaller installGit
+        {
+            Name                 = 'git.install'
+            Ensure               = 'Present'
+            AutoUpgrade          = $False
+            Version              = 2.20.1
+            chocoParams          = '--params "/GitOnlyOnPath /NoAutoCrlf"'
+            DependsOn            = '[cChocoInstaller]Install'
+        }        
+        cChocoPackageInstaller installGitHubDesktop
+        {
+            Name                 = 'github-desktop'
+            Ensure               = 'Present'
+            AutoUpgrade          = $False
+            Version              = 1.6.1
+            DependsOn            = '[cChocoInstaller]Install'
+        }        
+        cChocoPackageInstaller installGitKraken 
+        {
+            Name                 = 'github-desktop'
+            Ensure               = 'Present'
+            AutoUpgrade          = $False
+            Version              = 4.2.2
+            DependsOn            = '[cChocoInstaller]Install'
+        }
         
    }
 }
