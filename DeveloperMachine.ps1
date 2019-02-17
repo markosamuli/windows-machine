@@ -218,12 +218,18 @@ Configuration DeveloperMachine
             Version              = 10.0.40219.2
             DependsOn            = '[cChocoInstaller]Install'
         }
-        cChocoPackageInstaller installGPG4Win
+        cChocoPackageInstaller removeGPG4WinVanilla
         {
             Name                 = 'gpg4win-vanilla'
+            Ensure               = 'Absent'
+            DependsOn            = '[cChocoInstaller]Install'
+        }
+        cChocoPackageInstaller installGPG4Win
+        {
+            Name                 = 'gpg4win'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 2.3.4.20170919
+            Version              = 3.1.5
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installOpenVPN
