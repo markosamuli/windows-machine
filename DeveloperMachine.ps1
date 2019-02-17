@@ -293,6 +293,14 @@ Configuration DeveloperMachine
             Version              = 7.0.1
             DependsOn            = '[cChocoInstaller]Install'
         }
+        cChocoPackageInstaller installCURL
+        {
+            Name                 = 'curl'
+            Ensure               = 'Present'
+            AutoUpgrade          = $True
+            Version              = 7.64.0
+            DependsOn            = '[cChocoInstaller]Install'
+        }
         
         
    }
