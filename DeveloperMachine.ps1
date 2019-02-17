@@ -301,7 +301,14 @@ Configuration DeveloperMachine
             Version              = 7.64.0
             DependsOn            = '[cChocoInstaller]Install'
         }
-        
+        cChocoPackageInstaller installRuby
+        {
+            Name                 = 'ruby'
+            Ensure               = 'Present'
+            AutoUpgrade          = $False
+            Version              = 2.6.1.1
+            DependsOn            = '[cChocoInstaller]Install'
+        }
         
    }
 }
