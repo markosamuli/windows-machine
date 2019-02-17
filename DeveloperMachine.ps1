@@ -101,7 +101,7 @@ Configuration DeveloperMachine
             Name                 = 'googlechrome'
             Ensure               = 'Present'
             AutoUpgrade          = $False
-            Version              = 71.10.3578.80
+            Version              = 72.0.3626.109
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installFirefox
