@@ -317,6 +317,14 @@ Configuration DeveloperMachine
             Version              = 7.3.1
             DependsOn            = '[cChocoInstaller]Install'
         }
+        cChocoPackageInstaller installComposer
+        {
+            Name                 = 'composer'
+            Ensure               = 'Present'
+            AutoUpgrade          = $False
+            Version              = 4.10.0
+            DependsOn            = '[cChocoInstaller]Install'
+        }
         
    }
 }
