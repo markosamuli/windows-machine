@@ -256,6 +256,22 @@ Configuration DeveloperMachine
             Version              = 1.11.4
             DependsOn            = '[cChocoInstaller]Install'
         }
+        cChocoPackageInstaller installKubernetesCLI
+        {
+            Name                 = 'kubernetes-cli'
+            Ensure               = 'Present'
+            AutoUpgrade          = $AutoUpgrade
+            Version              = 1.13.3
+            DependsOn            = '[cChocoInstaller]Install'
+        }
+        cChocoPackageInstaller installKubernetesHelm
+        {
+            Name                 = 'kubernetes-helm'
+            Ensure               = 'Present'
+            AutoUpgrade          = $AutoUpgrade
+            Version              = 2.12.2
+            DependsOn            = '[cChocoInstaller]Install'
+        }
         
    }
 }
