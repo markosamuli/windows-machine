@@ -285,6 +285,14 @@ Configuration DeveloperMachine
             chocoParams          = '--installargs "ADD_CMAKE_TO_PATH=System"'
             DependsOn            = '[cChocoInstaller]Install'
         }
+        cChocoPackageInstaller installLLVM
+        {
+            Name                 = 'llvm'
+            Ensure               = 'Present'
+            AutoUpgrade          = $True
+            Version              = 7.0.1
+            DependsOn            = '[cChocoInstaller]Install'
+        }
         
         
    }
