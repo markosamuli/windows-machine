@@ -171,7 +171,7 @@ Configuration DeveloperMachine
             Name                 = 'terraform'
             Ensure               = 'Present'
             AutoUpgrade          = $False
-            Version              = 0.11.9
+            Version              = 0.11.11
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installPython
