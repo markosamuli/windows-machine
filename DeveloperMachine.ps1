@@ -276,6 +276,16 @@ Configuration DeveloperMachine
             Version              = 1.5
             DependsOn            = '[cChocoInstaller]Install'
         }
+        cChocoPackageInstaller installCmake
+        {
+            Name                 = 'cmake'
+            Ensure               = 'Present'
+            AutoUpgrade          = $True
+            Version              = 3.13.4
+            chocoParams          = '--installargs "ADD_CMAKE_TO_PATH=System"'
+            DependsOn            = '[cChocoInstaller]Install'
+        }
+        
         
    }
 }
