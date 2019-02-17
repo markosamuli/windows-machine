@@ -309,6 +309,14 @@ Configuration DeveloperMachine
             Version              = 2.6.1.1
             DependsOn            = '[cChocoInstaller]Install'
         }
+        cChocoPackageInstaller installPHP
+        {
+            Name                 = 'php'
+            Ensure               = 'Present'
+            AutoUpgrade          = $False
+            Version              = 7.3.1
+            DependsOn            = '[cChocoInstaller]Install'
+        }
         
    }
 }
