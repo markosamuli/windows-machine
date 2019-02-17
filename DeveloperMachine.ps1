@@ -248,6 +248,14 @@ Configuration DeveloperMachine
             Version              = 9.12.1
             DependsOn            = '[cChocoInstaller]Install'
         }
+        cChocoPackageInstaller installGolang
+        {
+            Name                 = 'golang'
+            Ensure               = 'Present'
+            AutoUpgrade          = $AutoUpgrade
+            Version              = 1.11.4
+            DependsOn            = '[cChocoInstaller]Install'
+        }
         
    }
 }
