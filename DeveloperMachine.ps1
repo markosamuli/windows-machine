@@ -93,7 +93,7 @@ Configuration DeveloperMachine
             Name                 = 'meld'
             Ensure               = 'Present'
             AutoUpgrade          = $True
-            Version              = 3.16.2
+            Version              = 3.20.0
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installChrome
