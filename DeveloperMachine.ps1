@@ -249,7 +249,7 @@ Configuration DeveloperMachine
             Name                 = 'golang'
             Ensure               = 'Present'
             AutoUpgrade          = $False
-            Version              = 1.11.4
+            Version              = 1.11.5
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installKubernetesCLI
