@@ -265,7 +265,7 @@ Configuration DeveloperMachine
             Name                 = 'kubernetes-helm'
             Ensure               = 'Present'
             AutoUpgrade          = $False
-            Version              = 2.12.2
+            Version              = 2.12.3
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installJq
