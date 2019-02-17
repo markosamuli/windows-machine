@@ -203,7 +203,7 @@ Configuration DeveloperMachine
             Name                 = 'Elixir'
             Ensure               = 'Present'
             AutoUpgrade          = $False
-            Version              = 1.7.1
+            Version              = 1.8.0
             DependsOn            = '[cChocoInstaller]Install'
         } 
         cChocoPackageInstaller installVCRedist2010
