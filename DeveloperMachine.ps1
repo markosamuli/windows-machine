@@ -68,7 +68,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'chocolatey'
             Ensure               = 'Present'
-            AutoUpgrade          = $True
+            AutoUpgrade          = $False
             Version              = 0.10.11
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -76,7 +76,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'chocolatey-core.extension'
             Ensure               = 'Present'
-            AutoUpgrade          = $True
+            AutoUpgrade          = $False
             Version              = 1.3.3
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -84,7 +84,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'ChocolateyGUI'
             Ensure               = 'Present'
-            AutoUpgrade          = $True
+            AutoUpgrade          = $False
             Version              = 0.16.0
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -92,7 +92,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'meld'
             Ensure               = 'Present'
-            AutoUpgrade          = $True
+            AutoUpgrade          = $False
             Version              = 3.20.0
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -132,7 +132,7 @@ Configuration DeveloperMachine
         {
             Name                 = '7zip'
             Ensure               = 'Present'
-            AutoUpgrade          = $True
+            AutoUpgrade          = $False
             Version              = 18.6
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -140,7 +140,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'Cmder'
             Ensure               = 'Present'
-            AutoUpgrade          = $True
+            AutoUpgrade          = $False
             Version              = 1.3.11
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -154,7 +154,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'postman'
             Ensure               = 'Present'
-            AutoUpgrade          = $True
+            AutoUpgrade          = $False
             Version              = 6.5.3
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -224,7 +224,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'gpg4win'
             Ensure               = 'Present'
-            AutoUpgrade          = $True
+            AutoUpgrade          = $False
             Version              = 3.1.5
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -232,7 +232,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'openvpn'
             Ensure               = 'Present'
-            AutoUpgrade          = $True
+            AutoUpgrade          = $False
             Version              = 2.4.6.20180710
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -240,7 +240,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'bind-toolsonly'
             Ensure               = 'Present'
-            AutoUpgrade          = $True
+            AutoUpgrade          = $False
             Version              = 9.12.1
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -248,7 +248,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'golang'
             Ensure               = 'Present'
-            AutoUpgrade          = $True
+            AutoUpgrade          = $False
             Version              = 1.11.4
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -256,7 +256,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'kubernetes-cli'
             Ensure               = 'Present'
-            AutoUpgrade          = $True
+            AutoUpgrade          = $False
             Version              = 1.13.3
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -264,7 +264,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'kubernetes-helm'
             Ensure               = 'Present'
-            AutoUpgrade          = $True
+            AutoUpgrade          = $False
             Version              = 2.12.2
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -272,7 +272,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'jq'
             Ensure               = 'Present'
-            AutoUpgrade          = $True
+            AutoUpgrade          = $False
             Version              = 1.5
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -280,7 +280,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'cmake'
             Ensure               = 'Present'
-            AutoUpgrade          = $True
+            AutoUpgrade          = $False
             Version              = 3.13.4
             chocoParams          = '--installargs "ADD_CMAKE_TO_PATH=System"'
             DependsOn            = '[cChocoInstaller]Install'
@@ -289,7 +289,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'llvm'
             Ensure               = 'Present'
-            AutoUpgrade          = $True
+            AutoUpgrade          = $False
             Version              = 7.0.1
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -297,7 +297,7 @@ Configuration DeveloperMachine
         {
             Name                 = 'curl'
             Ensure               = 'Present'
-            AutoUpgrade          = $True
+            AutoUpgrade          = $False
             Version              = 7.64.0
             DependsOn            = '[cChocoInstaller]Install'
         }
