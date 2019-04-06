@@ -9,7 +9,7 @@ Install software on development system.
 Automatically upgrade packages installed with Chocolatey to their latest versions.
 #>
 Configuration GolangDevelopmentMachine
-{    
+{
     Param (
         [switch]$AutoUpgrade
     )
@@ -29,10 +29,10 @@ Configuration GolangDevelopmentMachine
             Name                 = 'golang'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 1.11.5
+            Version              = 1.12.1
             DependsOn            = '[cChocoInstaller]Install'
         }
-        
+
    }
 }
 
