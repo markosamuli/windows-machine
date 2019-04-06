@@ -169,12 +169,8 @@ Start PowerShell with **Run as administrator** option and run the following comm
 Install or upgrade the following software:
 
 * [Terraform] 0.11.11
-* Kubernetes command-line tool, [kubectl] 1.13.3
-* Kubernetes package manager, [Helm] 2.12.3
 
 [Terraform]: https://www.terraform.io/
-[kubectl]: https://kubernetes.io/docs/tasks/tools/install-kubectl/
-[Helm]: https://helm.sh/
 
 ### Python development
 
@@ -265,7 +261,20 @@ Start PowerShell with **Run as administrator** option and run the following comm
 
 [Hyper-V]: https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/
 [Docker for Windows]: https://docs.docker.com/docker-for-windows/
-[Windows Pro]
+
+### Kubernetes tools setup
+
+Start PowerShell with **Run as administrator** option and run the following command:
+
+```PowerShell
+.\Kubernetes.ps1
+```
+
+* Kubernetes command-line tool, [kubectl] 1.13.3
+* Kubernetes package manager, [Helm] 2.13.1
+
+[kubectl]: https://kubernetes.io/docs/tasks/tools/install-kubectl/
+[Helm]: https://helm.sh/
 
 ## PowerShell 5.1 Reference
 
