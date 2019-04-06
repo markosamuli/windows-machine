@@ -29,7 +29,7 @@ Configuration CloudDevelopmentMachine
             Name                 = 'terraform'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 0.11.11
+            Version              = 0.11.13
             DependsOn            = '[cChocoInstaller]Install'
         }
 
