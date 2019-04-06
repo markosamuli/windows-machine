@@ -87,7 +87,7 @@ Configuration DevelopmentMachine
             Name                 = 'vscode'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 1.31.1
+            Version              = 1.33.0
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installVCRedist2010
