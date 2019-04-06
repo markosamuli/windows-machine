@@ -136,7 +136,7 @@ Configuration DevelopmentMachine
             Name                 = 'curl'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 7.64.0
+            Version              = 7.64.1
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installWget
