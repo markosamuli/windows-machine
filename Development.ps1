@@ -119,7 +119,7 @@ Configuration DevelopmentMachine
             Name                 = 'cmake'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 3.13.4
+            Version              = 3.14.1
             chocoParams          = '--installargs "ADD_CMAKE_TO_PATH=System"'
             DependsOn            = '[cChocoInstaller]Install'
         }
