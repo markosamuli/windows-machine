@@ -152,7 +152,7 @@ Configuration DevelopmentMachine
             Name                 = 'git.install'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 2.20.1
+            Version              = 2.21.0
             chocoParams          = '--params "/GitOnlyOnPath /NoAutoCrlf"'
             DependsOn            = '[cChocoInstaller]Install'
         }
