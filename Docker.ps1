@@ -25,7 +25,7 @@ Configuration DockerMachine
         {
             Ensure = 'Enable'
             Name = 'Microsoft-Hyper-V'
-        } 
+        }
 
         # Chocolatey packages
         cChocoinstaller Install {
@@ -36,9 +36,9 @@ Configuration DockerMachine
             Name                 = 'docker-desktop'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 2.0.0.0
+            Version              = 2.0.0.3
             DependsOn            = '[cChocoInstaller]Install', '[WindowsOptionalFeature]HyperV'
-        } 
+        }
    }
 }
 
