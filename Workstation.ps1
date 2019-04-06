@@ -24,6 +24,14 @@ Configuration WorkstationMachine
         cChocoinstaller Install {
             InstallDir = "C:\ProgramData\chocolatey"
         }
+        cChocoPackageInstaller install7Zip
+        {
+            Name                 = '7zip'
+            Ensure               = 'Present'
+            AutoUpgrade          = $AutoUpgrade
+            Version              = 19.0.0
+            DependsOn            = '[cChocoInstaller]Install'
+        }
         cChocoPackageInstaller installChrome
         {
             Name                 = 'googlechrome'
@@ -38,14 +46,6 @@ Configuration WorkstationMachine
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
             Version              = 65.0.1
-            DependsOn            = '[cChocoInstaller]Install'
-        }
-        cChocoPackageInstaller install7Zip
-        {
-            Name                 = '7zip'
-            Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
-            Version              = 18.6
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller removeGPG4WinVanilla
