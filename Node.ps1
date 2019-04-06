@@ -9,10 +9,10 @@ Install Node.js on a development system.
 Automatically upgrade packages installed with Chocolatey to their latest versions.
 #>
 Configuration NodeDevelopmentMachine
-{    
+{
     Param (
         [switch]$AutoUpgrade
-    ) 
+    )
     Import-DscResource -ModuleName cChoco -ModuleVersion 2.4.0.0
     Import-DscResource -ModuleName PackageManagement -ModuleVersion 1.2.4
     Import-DscResource -ModuleName PSDesiredStateConfiguration
@@ -28,10 +28,10 @@ Configuration NodeDevelopmentMachine
             Name                 = 'nodejs-lts'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 10.15.1
+            Version              = 10.15.3
             DependsOn            = '[cChocoInstaller]Install'
-        } 
-        
+        }
+
    }
 }
 
