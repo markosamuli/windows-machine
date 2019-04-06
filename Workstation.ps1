@@ -69,7 +69,7 @@ Configuration WorkstationMachine
             AutoUpgrade          = $AutoUpgrade
             Version              = 2.4.6.20190116
             DependsOn            = '[cChocoInstaller]Install'
-        }        
+        }
         cChocoPackageInstaller installVLC
         {
             Name                 = 'vlc'
@@ -86,7 +86,14 @@ Configuration WorkstationMachine
             Version              = 1.0.80.474
             DependsOn            = '[cChocoInstaller]Install'
         }
-        
+        cChocoPackageInstaller installWinSCP
+        {
+            Name                 = 'winscp'
+            Ensure               = 'Present'
+            AutoUpgrade          = $AutoUpgrade
+            Version              = 5.15
+            DependsOn            = '[cChocoInstaller]Install'
+        }
    }
 }
 

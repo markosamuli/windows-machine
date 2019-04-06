@@ -9,7 +9,7 @@ Install software on development system.
 Automatically upgrade packages installed with Chocolatey to their latest versions.
 #>
 Configuration DevelopmentMachine
-{    
+{
     Param (
         [switch]$AutoUpgrade
     )
@@ -89,7 +89,7 @@ Configuration DevelopmentMachine
             AutoUpgrade          = $AutoUpgrade
             Version              = 1.31.1
             DependsOn            = '[cChocoInstaller]Install'
-        } 
+        }
         cChocoPackageInstaller installVCRedist2010
         {
             Name                 = 'vcredist2010'
@@ -155,7 +155,7 @@ Configuration DevelopmentMachine
             Version              = 2.20.1
             chocoParams          = '--params "/GitOnlyOnPath /NoAutoCrlf"'
             DependsOn            = '[cChocoInstaller]Install'
-        }        
+        }
         cChocoPackageInstaller installGitHubDesktop
         {
             Name                 = 'github-desktop'
@@ -163,8 +163,8 @@ Configuration DevelopmentMachine
             AutoUpgrade          = $AutoUpgrade
             Version              = 1.6.1
             DependsOn            = '[cChocoInstaller]Install'
-        }        
-        cChocoPackageInstaller installGitKraken 
+        }
+        cChocoPackageInstaller installGitKraken
         {
             Name                 = 'gitkraken'
             Ensure               = 'Present'
@@ -172,7 +172,6 @@ Configuration DevelopmentMachine
             Version              = 4.2.2
             DependsOn            = '[cChocoInstaller]Install'
         }
-        
    }
 }
 
