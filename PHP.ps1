@@ -9,7 +9,7 @@ Install software on development system.
 Automatically upgrade packages installed with Chocolatey to their latest versions.
 #>
 Configuration PHPDevelopmentMachine
-{    
+{
     Param (
         [switch]$AutoUpgrade
     )
@@ -29,7 +29,7 @@ Configuration PHPDevelopmentMachine
             Name                 = 'php'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 7.3.1
+            Version              = 7.3.4
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installComposer
@@ -40,7 +40,7 @@ Configuration PHPDevelopmentMachine
             Version              = 4.10.0
             DependsOn            = '[cChocoInstaller]Install'
         }
-        
+
    }
 }
 
