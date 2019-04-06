@@ -37,7 +37,7 @@ Configuration WorkstationMachine
             Name                 = 'googlechrome'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 72.0.3626.109
+            Version              = 73.0.3683.103
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installFirefox
