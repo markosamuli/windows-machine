@@ -45,7 +45,7 @@ Configuration WorkstationMachine
             Name                 = 'firefox'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 65.0.1
+            Version              = 66.0.2
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller removeGPG4WinVanilla
