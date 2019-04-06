@@ -67,7 +67,7 @@ Configuration WorkstationMachine
             Name                 = 'openvpn'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 2.4.6.20190116
+            Version              = 2.4.7
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installVLC
