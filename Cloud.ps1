@@ -9,7 +9,7 @@ Install software on development system.
 Automatically upgrade packages installed with Chocolatey to their latest versions.
 #>
 Configuration CloudDevelopmentMachine
-{    
+{
     Param (
         [switch]$AutoUpgrade
     )
@@ -29,26 +29,10 @@ Configuration CloudDevelopmentMachine
             Name                 = 'terraform'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 0.11.11
+            Version              = 0.11.13
             DependsOn            = '[cChocoInstaller]Install'
         }
-        cChocoPackageInstaller installKubernetesCLI
-        {
-            Name                 = 'kubernetes-cli'
-            Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
-            Version              = 1.13.3
-            DependsOn            = '[cChocoInstaller]Install'
-        }
-        cChocoPackageInstaller installKubernetesHelm
-        {
-            Name                 = 'kubernetes-helm'
-            Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
-            Version              = 2.12.3
-            DependsOn            = '[cChocoInstaller]Install'
-        }
-        
+
    }
 }
 

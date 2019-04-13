@@ -9,7 +9,7 @@ Install Hyper-V and Docker Desktop on the target machine.
 Automatically upgrade packages installed with Chocolatey to their latest versions.
 #>
 
-Configuration DockerMachine
+Configuration KubernetesMachine
 {
     Param (
         [switch]$AutoUpgrade
@@ -20,27 +20,28 @@ Configuration DockerMachine
 
     Node "localhost"
     {
-        # Windows features
-        WindowsOptionalFeature HyperV
-        {
-            Ensure = 'Enable'
-            Name = 'Microsoft-Hyper-V'
-        }
-
         # Chocolatey packages
         cChocoinstaller Install {
             InstallDir = "C:\ProgramData\chocolatey"
         }
-        cChocoPackageInstaller installDocker
+        cChocoPackageInstaller installKubernetesCLI
         {
-            Name                 = 'docker-desktop'
+            Name                 = 'kubernetes-cli'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 2.0.0.3
-            DependsOn            = '[cChocoInstaller]Install', '[WindowsOptionalFeature]HyperV'
+            Version              = 1.13.3
+            DependsOn            = '[cChocoInstaller]Install'
+        }
+        cChocoPackageInstaller installKubernetesHelm
+        {
+            Name                 = 'kubernetes-helm'
+            Ensure               = 'Present'
+            AutoUpgrade          = $AutoUpgrade
+            Version              = 2.13.1
+            DependsOn            = '[cChocoInstaller]Install'
         }
    }
 }
 
-DockerMachine
-Start-DscConfiguration -Path .\DockerMachine -Wait -Verbose -Force
+KubernetesMachine
+Start-DscConfiguration -Path .\KubernetesMachine -Wait -Verbose -Force

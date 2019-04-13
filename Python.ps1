@@ -9,7 +9,7 @@ Install software on development system.
 Automatically upgrade packages installed with Chocolatey to their latest versions.
 #>
 Configuration PythonDevelopmentMachine
-{    
+{
     Param (
         [switch]$AutoUpgrade
     )
@@ -29,10 +29,10 @@ Configuration PythonDevelopmentMachine
             Name                 = 'python3'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 3.7.2
+            Version              = 3.7.3
             DependsOn            = '[cChocoInstaller]Install'
-        } 
-        
+        }
+
    }
 }
 

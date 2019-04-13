@@ -24,12 +24,20 @@ Configuration WorkstationMachine
         cChocoinstaller Install {
             InstallDir = "C:\ProgramData\chocolatey"
         }
+        cChocoPackageInstaller install7Zip
+        {
+            Name                 = '7zip'
+            Ensure               = 'Present'
+            AutoUpgrade          = $AutoUpgrade
+            Version              = 19.0.0
+            DependsOn            = '[cChocoInstaller]Install'
+        }
         cChocoPackageInstaller installChrome
         {
             Name                 = 'googlechrome'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 72.0.3626.109
+            Version              = 73.0.3683.103
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installFirefox
@@ -37,15 +45,7 @@ Configuration WorkstationMachine
             Name                 = 'firefox'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 65.0.1
-            DependsOn            = '[cChocoInstaller]Install'
-        }
-        cChocoPackageInstaller install7Zip
-        {
-            Name                 = '7zip'
-            Ensure               = 'Present'
-            AutoUpgrade          = $AutoUpgrade
-            Version              = 18.6
+            Version              = 66.0.2
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller removeGPG4WinVanilla
@@ -67,9 +67,9 @@ Configuration WorkstationMachine
             Name                 = 'openvpn'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 2.4.6.20190116
+            Version              = 2.4.7
             DependsOn            = '[cChocoInstaller]Install'
-        }        
+        }
         cChocoPackageInstaller installVLC
         {
             Name                 = 'vlc'
@@ -86,7 +86,14 @@ Configuration WorkstationMachine
             Version              = 1.0.80.474
             DependsOn            = '[cChocoInstaller]Install'
         }
-        
+        cChocoPackageInstaller installWinSCP
+        {
+            Name                 = 'winscp'
+            Ensure               = 'Present'
+            AutoUpgrade          = $AutoUpgrade
+            Version              = 5.15
+            DependsOn            = '[cChocoInstaller]Install'
+        }
    }
 }
 

@@ -9,7 +9,7 @@ Install software on development system.
 Automatically upgrade packages installed with Chocolatey to their latest versions.
 #>
 Configuration DevelopmentMachine
-{    
+{
     Param (
         [switch]$AutoUpgrade
     )
@@ -79,7 +79,7 @@ Configuration DevelopmentMachine
             Name                 = 'postman'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 6.7.2
+            Version              = 7.0.6
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installVSCode
@@ -87,9 +87,9 @@ Configuration DevelopmentMachine
             Name                 = 'vscode'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 1.31.1
+            Version              = 1.33.0
             DependsOn            = '[cChocoInstaller]Install'
-        } 
+        }
         cChocoPackageInstaller installVCRedist2010
         {
             Name                 = 'vcredist2010'
@@ -119,7 +119,7 @@ Configuration DevelopmentMachine
             Name                 = 'cmake'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 3.13.4
+            Version              = 3.14.1
             chocoParams          = '--installargs "ADD_CMAKE_TO_PATH=System"'
             DependsOn            = '[cChocoInstaller]Install'
         }
@@ -136,7 +136,7 @@ Configuration DevelopmentMachine
             Name                 = 'curl'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 7.64.0
+            Version              = 7.64.1
             DependsOn            = '[cChocoInstaller]Install'
         }
         cChocoPackageInstaller installWget
@@ -152,10 +152,10 @@ Configuration DevelopmentMachine
             Name                 = 'git.install'
             Ensure               = 'Present'
             AutoUpgrade          = $AutoUpgrade
-            Version              = 2.20.1
+            Version              = 2.21.0
             chocoParams          = '--params "/GitOnlyOnPath /NoAutoCrlf"'
             DependsOn            = '[cChocoInstaller]Install'
-        }        
+        }
         cChocoPackageInstaller installGitHubDesktop
         {
             Name                 = 'github-desktop'
@@ -163,8 +163,8 @@ Configuration DevelopmentMachine
             AutoUpgrade          = $AutoUpgrade
             Version              = 1.6.1
             DependsOn            = '[cChocoInstaller]Install'
-        }        
-        cChocoPackageInstaller installGitKraken 
+        }
+        cChocoPackageInstaller installGitKraken
         {
             Name                 = 'gitkraken'
             Ensure               = 'Present'
@@ -172,7 +172,6 @@ Configuration DevelopmentMachine
             Version              = 4.2.2
             DependsOn            = '[cChocoInstaller]Install'
         }
-        
    }
 }
 
