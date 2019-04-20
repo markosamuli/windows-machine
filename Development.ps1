@@ -172,6 +172,14 @@ Configuration DevelopmentMachine
             Version              = 4.2.2
             DependsOn            = '[cChocoInstaller]Install'
         }
+        cChocoPackageInstaller installTerminus
+        {
+            Name                 = 'terminus'
+            Ensure               = 'Present'
+            AutoUpgrade          = $AutoUpgrade
+            Version              = 1.0.73
+            DependsOn            = '[cChocoInstaller]Install'
+        }
    }
 }
 
