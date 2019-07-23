@@ -12,6 +12,10 @@ tested on other systems.
 
 [Windows 10 version 1809]: https://docs.microsoft.com/en-us/windows/windows-10/release-information
 
+## PowerShell
+
+Start PowerShell with **Run as administrator** option to run any of the following commands.
+
 ## Configure WinRM
 
 Start [WinRM] service:
@@ -40,7 +44,7 @@ Install PowerShellGet and PackageManagement modules:
 
 ```PowerShell
 Install-Module –Name PowerShellGet -Force -MinimumVersion 2.0.3
-Install-Module –Name PackageManagement -Force -MinimumVersion 1.2.4
+Install-Module –Name PackageManagement -Force -MinimumVersion 1.4.3
 ```
 
 Install [cChoco module](https://www.powershellgallery.com/packages/cChoco/2.3.1.0):
@@ -49,9 +53,24 @@ Install [cChoco module](https://www.powershellgallery.com/packages/cChoco/2.3.1.
 Install-Module -Name cChoco -MinimumVersion 2.4.0.0
 ```
 
+## Execution policy for the PowerShell scripts
+
+Change machine level PowerShell [ExecutionPolicy][exec-policy] to `RemoteSigned` in the 
+`LocalMachine` scope:
+
+```PowerShell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+```
+
+[exec-policy]: https://docs.microsoft.com/en-gb/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1
+
 ## Base setup
 
-Start PowerShell with **Run as administrator** option and run the following command:
+Run the following commands:
+
+```PowerShell
+Unblock-File .\Base.ps1
+```
 
 ```PowerShell
 .\Base.ps1
@@ -74,9 +93,37 @@ Install or upgrade the following software:
 [Chocolatey Core Extensions]: https://chocolatey.org/packages/chocolatey-core.extension
 [Chocolatey GUI]: https://github.com/chocolatey/ChocolateyGUI
 
+## Minimum development setup
+
+Install minimum development setup for running Ubuntu on [WSL](https://docs.microsoft.com/en-us/windows/wsl/about):
+
+```PowerShell
+Unblock-File .\Minimum.ps1
+```
+
+```PowerShell
+.\Minimum.ps1
+```
+
+### Docker for Windows setup
+
+Docker for Windows requires [Hyper-V] so you need a Windows 10 Pro license.
+
+Run the following commands:
+
+```PowerShell
+.\Docker.ps1
+```
+
+* Enable [Hyper-V] feature
+* Install [Docker for Windows]
+
+[Hyper-V]: https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/
+[Docker for Windows]: https://docs.docker.com/docker-for-windows/
+
 ## Workstation setup
 
-Start PowerShell with **Run as administrator** option and run the following command:
+Run the following commands:
 
 ```PowerShell
 .\Workstation.ps1
@@ -102,7 +149,7 @@ Install or upgrade the following software:
 
 ## Development machine
 
-Start PowerShell with **Run as administrator** option and run the following command:
+Run the following commands:
 
 ```PowerShell
 .\Development.ps1
@@ -146,7 +193,7 @@ Install or upgrade the following software:
 
 ### Go Programming language
 
-Start PowerShell with **Run as administrator** option and run the following command:
+Run the following commands:
 
 ```PowerShell
 .\Golang.ps1
@@ -160,7 +207,7 @@ Install or upgrade the following software:
 
 ### Cloud tools
 
-Start PowerShell with **Run as administrator** option and run the following command:
+Run the following commands:
 
 ```PowerShell
 .\Cloud.ps1
@@ -174,7 +221,7 @@ Install or upgrade the following software:
 
 ### Python development
 
-Start PowerShell with **Run as administrator** option and run the following command:
+Run the following commands:
 
 ```PowerShell
 .\Python.ps1
@@ -188,7 +235,7 @@ Install or upgrade the following software:
 
 ### PHP development
 
-Start PowerShell with **Run as administrator** option and run the following command:
+Run the following commands:
 
 ```PowerShell
 .\PHP.ps1
@@ -204,7 +251,7 @@ Install or upgrade the following software:
 
 ### Node.js development
 
-Start PowerShell with **Run as administrator** option and run the following command:
+Run the following commands:
 
 ```PowerShell
 .\Node.ps1
@@ -218,7 +265,7 @@ Install or upgrade the following software:
 
 ### Ruby development
 
-Start PowerShell with **Run as administrator** option and run the following command:
+Run the following commands:
 
 ```PowerShell
 .\Ruby.ps1
@@ -232,7 +279,7 @@ Install or upgrade the following software:
 
 ### Elixir development
 
-Start PowerShell with **Run as administrator** option and run the following command:
+Run the following commands:
 
 ```PowerShell
 .\Elixir.ps1
@@ -246,25 +293,9 @@ Install or upgrade the following software:
 [Erlang]: http://www.erlang.org/
 [Elixir]: https://elixir-lang.org/
 
-### Docker for Windows setup
-
-Docker for Windows requires [Hyper-V] so you need a Windows 10 Pro license.
-
-Start PowerShell with **Run as administrator** option and run the following command:
-
-```PowerShell
-.\Docker.ps1
-```
-
-* Enable [Hyper-V] feature
-* Install [Docker for Windows]
-
-[Hyper-V]: https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/
-[Docker for Windows]: https://docs.docker.com/docker-for-windows/
-
 ### Kubernetes tools setup
 
-Start PowerShell with **Run as administrator** option and run the following command:
+Run the following commands:
 
 ```PowerShell
 .\Kubernetes.ps1

@@ -15,7 +15,7 @@ Configuration BaseMachine
     )
 
     Import-DscResource -ModuleName cChoco -ModuleVersion 2.4.0.0
-    Import-DscResource -ModuleName PackageManagement -ModuleVersion 1.2.4
+    Import-DscResource -ModuleName PackageManagement -ModuleVersion 1.4.3
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
     Node "localhost"
