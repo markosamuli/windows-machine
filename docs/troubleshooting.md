@@ -137,3 +137,34 @@ Change network category to Private using the correct `InterfaceIndex` value:
 ```PowerShell
 Set-NetConnectionProfile -InterfaceIndex 17 -NetworkCategory Private
 ```
+
+## Access denied when starting Docker Desktop
+
+You're seeing the following error when starting **Docker Desktop** application.
+
+![Docker Desktop access denied](docker-desktop-access-denied.png)
+
+Open **Computer Management** application.
+
+![Computer Management](computer-management.png)
+
+Open **Local users and groups** > **Groups** and double-click
+**docker-users** group to edit it.
+
+![Local Users and Groups](local-users-and-groups.png)
+
+You'll see the current users in the group.
+
+![docker-users Properties](docker-users-properties.png)
+
+If you are not in the group, go to **Users** on the left face and select your user account.
+
+![User properties](user-properties.png)
+
+Click **Add...** and add **docker-users** group into your groups.
+
+![User groups](user-groups.png)
+
+Click **OK** twice and close the application.
+
+**Log out of Windows** and your **docker-users** membership will be taken into account.

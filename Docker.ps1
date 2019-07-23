@@ -16,14 +16,14 @@ Configuration DockerMachine
     )
 
     Import-DscResource -ModuleName cChoco -ModuleVersion 2.4.0.0
-    Import-DscResource -ModuleName PSDesiredStateConfiguration
+    Import-DscResource -ModuleName PSDscResources
 
     Node "localhost"
     {
         # Windows features
         WindowsOptionalFeature HyperV
         {
-            Ensure = 'Enable'
+            Ensure = 'Present'
             Name = 'Microsoft-Hyper-V'
         }
 

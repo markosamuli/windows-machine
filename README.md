@@ -40,6 +40,12 @@ Install NuGet provider:
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 ```
 
+Install [PSDscResources] module:
+
+```PowerShell
+Install-Module PSDscResources
+```
+
 Install PowerShellGet and PackageManagement modules:
 
 ```PowerShell
@@ -47,11 +53,14 @@ Install-Module –Name PowerShellGet -Force -MinimumVersion 2.0.3
 Install-Module –Name PackageManagement -Force -MinimumVersion 1.4.3
 ```
 
-Install [cChoco module](https://www.powershellgallery.com/packages/cChoco/2.3.1.0):
+Install [cChoco] module:
 
 ```PowerShell
 Install-Module -Name cChoco -MinimumVersion 2.4.0.0
 ```
+
+[PSDscResources]: https://github.com/PowerShell/PSDscResources
+[cChoco module]: https://www.powershellgallery.com/packages/cChoco/2.3.1.0
 
 ## Execution policy for the PowerShell scripts
 
@@ -109,14 +118,26 @@ Unblock-File .\Minimum.ps1
 
 Docker for Windows requires [Hyper-V] so you need a Windows 10 Pro license.
 
-Run the following commands:
+Enabling Hyper-V doesn't seem to work on Windows 10 version 1903, so enable this first:
+
+```PowerShell
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+```
+
+When the installation has completed, reboot. The above command might restart 
+automatically, so save your work first.
+
+Run the following commands to install [Docker for Windows]:
+
+```PowerShell
+Unblock-File .\Docker.ps1
+```
 
 ```PowerShell
 .\Docker.ps1
 ```
 
-* Enable [Hyper-V] feature
-* Install [Docker for Windows]
+Reboot.
 
 [Hyper-V]: https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/
 [Docker for Windows]: https://docs.docker.com/docker-for-windows/
